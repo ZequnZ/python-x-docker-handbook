@@ -26,3 +26,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 - Create requirements.txt
 - Create Dockerfile
 - Create PR template
+
+## [0.0.3] - 2020-02-15
+
+### Changed
+
+- Fix a bug in the Dockerfile

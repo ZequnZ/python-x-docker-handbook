@@ -29,6 +29,12 @@ Goal:
 **Notice**
 It would be convenient to use the same *hostPort* and *containerPort*, otherwise when open the jupyter notebook link, you may need to modify the port from *containerPort* to *hostPort*.
 
+## TODO
+
+- [ ] Understand how to save jupyter notebooks from docker container to local machine
+- [ ] Add more important / useful python packages to the requirements.txt
+- [ ] Think & learn how to add a selection menu when running the docker container
+
 
 ## Changelog
 

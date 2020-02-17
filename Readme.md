@@ -1,6 +1,6 @@
 # Python docker container
 
-** Created at 15/02/2020 **
+__Created at 15/02/2020__
 
 Goal:
 
@@ -10,7 +10,7 @@ Goal:
 
 ## Install and how to run the container
 
-1. Install *Docker*
+1. Install _Docker_
 2. Clone this repository `git clone https://github.com/ZequnZ/py-docker.git`
 3. Build the Docker container `docker Build -t zequnz/py-docker:<version> <DockerfilePath>`
 4. Run the container `docker run -itd zequn/py-docker:<version>` and get the containerID.
@@ -21,30 +21,44 @@ Goal:
 ### How to run jupyter notebook in the container
 
 1. Bind a port when running the Docker container and get the containerID
-`docker run -itd -p <hostPort>:<containerPort> zequn/py-docker:<version>`
+   `docker run -itd -p <hostPort>:<containerPort> zequn/py-docker:<version>`
 2. Execute the container `docker exec -it <containerID> bash`
 3. Inside the contain launch the notebook assigning the port we just bind:
-`jupyter notebook --ip 0.0.0.0 --port <containerPort> --no-brower --allow-root`
+   `jupyter notebook --ip 0.0.0.0 --port <containerPort> --no-brower --allow-root`
 4. Then open the jupyter notebook link on the browser.
-**Notice**
-It would be convenient to use the same *hostPort* and *containerPort*, otherwise when open the jupyter notebook link, you may need to modify the port from *containerPort* to *hostPort*.
+   **Notice**
+   It would be convenient to use the same _hostPort_ and _containerPort_, otherwise when open the jupyter notebook link, you may need to modify the port from _containerPort_ to _hostPort_.
+
+## How to run docker volume for the container
+
+1. Add the option when running the container
+   `docker run -itp -p <hostPort>:<containerPort> -v $(pwd)/<VOLUME-FOLDER>:<CONTAINER-PATH> zequn/py-docker:<version>`
 
 ## TODO
 
-- [ ] Understand how to save jupyter notebooks from docker container to local machine
+- [x] Understand how to save jupyter notebooks from docker container to local machine: **Docker volume**
 - [ ] Add more important / useful python packages to the requirements.txt
 - [ ] Think & learn how to add a selection menu when running the docker container
-
 
 ## Changelog
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
-## Current version [0.0.4] - 2020-02-16
+## Current version [0.0.5] - 2020-02-17
+
+## Added
+
+- gitignore file
+
+## Changed
+
+- Add a instructions in the Readme: _How to run docker volume for the container_
+
+## [0.0.4] - 2020-02-16
 
 ### Added
 
-- Add instructions in the Readme: *Install and how to run the container* and *How to run jupyter notebook in the container*
+- Add instructions in the Readme: _Install and how to run the container_ and _How to run jupyter notebook in the container_
 
 ### Changed
 

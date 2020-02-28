@@ -44,11 +44,12 @@ Goal:
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
-## Current version [0.0.5] - 2020-02-17
+## Current version [0.0.5] - 2020-02-28
 
 ## Added
 
 - gitignore file
+- several packages in _requirements.txt_
 
 ## Changed
 

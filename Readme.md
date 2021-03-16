@@ -2,6 +2,8 @@
 
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)  [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
 
+In this repo, I will introduce how to use Docker to support Python project/application development.
+
 
 Content：
 - how to set up a **reproducible development environment** using Docker container for Python
@@ -14,6 +16,7 @@ Content：
 - how to dockerize an python application
   - 1 + 2
 - The power of docker-compose
+  - mocked service
 ## Install and how to run the container
 
 1. Install [Docker](https://www.docker.com/)  

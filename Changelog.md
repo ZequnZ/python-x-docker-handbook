@@ -2,7 +2,14 @@
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
-## Current version [0.0.6] - 2020-03-15
+## Current version [0.0.7] - 2020-03-16
+
+### Changed:
+
+- Split the Changelog
+- Update the Readme, repo title
+
+## [0.0.6] - 2020-03-15
 
 ### Added:
 

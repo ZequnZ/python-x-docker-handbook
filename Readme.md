@@ -1,13 +1,19 @@
-# Python docker container
+# Python x Docker Handbook
+# Python x Docker 协作指南
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
 
-**Created at 15/02/2020**
 
-Goal:
-
-- Practice how to build up a Docker container for Python
-- Uuderstand the components of a Dockerfile.
-- Test how to run a python project in a docker container
-
+Content：
+- how to set up a **reproducible development environment** using Docker container for Python
+   - install, build, run, execute
+   - pull/push
+- how to run your Python code interactively with a Docker container
+   - volumn
+   - --publish , -p  Publish a container's port(s) to the host
+   - docker-compose
+- how to dockerize an python application
+  - 1 + 2
+- The power of docker-compose
 ## Install and how to run the container
 
 1. Install [Docker](https://www.docker.com/)  
@@ -46,63 +52,6 @@ Execute the container with command: `make exec command=<command,default=bash>`
 
 - [x] Understand how to save jupyter notebooks from docker container to local machine: **Docker volume**  
 - [x] Add a [Makefile](./Makefile) to simplify the running commands.  
-- [ ] Add more important / useful python packages to requirements.txt  
+- [x] Add more important / useful python packages to requirements.txt  
+- [ ] Docker-compose
 - [ ] Think & learn how to add a selection menu when running the docker container  
-
-## Changelog
-
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
-
-## Current version [0.0.6] - 2020-03-15
-
-### Added:
-
-- Makefile, to provided simpilified command
-
-### Changed:
-
-- Update Readme with concise command
-- Update requirement.txt
-
-## [0.0.5] - 2020-02-28
-
-### Added
-
-- gitignore file
-- several packages in _requirements.txt_
-
-### Changed
-
-- Add a instructions in the Readme: _How to run docker volume for the container_
-
-## [0.0.4] - 2020-02-16
-
-### Added
-
-- Add instructions in the Readme: _Install and how to run the container_ and _How to run jupyter notebook in the container_
-
-### Changed
-
-- Comment one line in the Dockerfile as now we don't have folder src yet
-- In the Dockerfile, use 'LABEL' instead of deprecated 'MAINTAINER'
-
-## [0.0.3] - 2020-02-15
-
-### Changed
-
-- Fix a bug in the Dockerfile
-
-## [0.0.2] - 2020-02-15
-
-### Added
-
-- Create requirements.txt
-- Create Dockerfile
-- Create PR template
-
-## [0.0.1] - 2020-02-15
-
-### Added
-
-- Create this repository
-- Add Readme

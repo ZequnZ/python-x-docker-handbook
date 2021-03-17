@@ -5,10 +5,6 @@ LABEL Email="Zequn.zhou@n26.com"
 
 WORKDIR  /app
 
-COPY requirements.txt /app
+COPY hello_world.py /app
 
-RUN pip install --no-cache-dir -r requirements.txt
-
-#COPY ./src /app
-
-EXPOSE 5000
+CMD [ "python", "hello_world.py" ]

@@ -1,3 +1,4 @@
+# Source: https://www.asciiart.eu/computers/computers
 welcome = """
              ________________________________________________
             /                                                \ 

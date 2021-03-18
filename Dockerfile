@@ -1,14 +1,10 @@
 FROM python:3.8.1-slim
 
 LABEL Author="ZequnZ"
-LABEL Email="Zequn.zhou@n26.com"
+LABEL Email="zequn.zhou007@gmail.com"
 
 WORKDIR  /app
 
-COPY requirements.txt /app
+COPY hello_world.py /app
 
-RUN pip install --no-cache-dir -r requirements.txt
-
-#COPY ./src /app
-
-EXPOSE 5000
+CMD [ "python", "hello_world.py" ]

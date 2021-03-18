@@ -2,7 +2,13 @@
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
-## Current version [0.0.7] - 2020-03-16
+## Current version [0.0.8] - 2020-03-18
+
+### Added:
+
+- Finalize the hello-world example and the guidance
+
+## [0.0.7] - 2020-03-16
 
 ### Changed:
 

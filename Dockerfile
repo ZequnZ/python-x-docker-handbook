@@ -1,7 +1,7 @@
 FROM python:3.8.1-slim
 
 LABEL Author="ZequnZ"
-LABEL Email="Zequn.zhou@n26.com"
+LABEL Email="zequn.zhou007@gmail.com"
 
 WORKDIR  /app
 

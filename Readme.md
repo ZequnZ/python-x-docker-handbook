@@ -11,18 +11,20 @@ Just need to install [Python](https://www.python.org/) and [Docker](https://www.
 
 ## An hello world example
 
-1. Clone this repository `git clone https://github.com/ZequnZ/py-docker.git`  
-2. Build the Docker container `docker build -t py-x-docker .`  
-3. Execute the container `docker run py-x-docker` 
+1. Clone this repository `git clone https://github.com/ZequnZ/python-x-docker-handbook.git` 
+2. Change your current directory to this repo `cd python-x-docker-handbook`
+3. Build the Docker container `docker build -t py-x-docker .`  
+4. Execute the container `docker run py-x-docker` 
 
 Then you will see my welcome message.
 
-I also use [Makefile](./Makefile) to make life easier,
+I also use [Makefile](./Makefile) to make life easier 
 so that you do not need to remember the full command:  
-Build the Docker container: `make build`  
-Execute the container: `make run`  
+- Build the Docker container: `make build`  
+- Execute the container: `make run`  
 
 **That is the way to put your Python code into a Docker container, and build it and execute it!**  
+
 It is simple, isn't it? If you want to know more about how to utilize Docker to support your python development, just follow this repo and I will show more interesting use cases!
 
 ## TODO

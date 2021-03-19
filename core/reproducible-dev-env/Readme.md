@@ -8,7 +8,8 @@ We will go through the following steps:
 
 ## Prepare the code and dependency
 Prepare your python code in [src](./src) and put your dependencies in [requirements.txt](./requirements.txt)  
-Here as an example, I use 
+Here just as an example, I use the code of sudoku generator, which is [another repo](https://github.com/ZequnZ/CV-based-sudoku-solver) of mine.  
+You can see the folder structure as follows:
 
 ```
 .

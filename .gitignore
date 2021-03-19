@@ -131,3 +131,5 @@ dmypy.json
 /volumn_test
 
 *_backup
+
+settings.*

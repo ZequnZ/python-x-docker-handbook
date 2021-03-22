@@ -2,7 +2,12 @@
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
-## Current version [0.0.8] - 2020-03-18
+## Current version [0.0.9] - 2020-03-22
+
+### Added:
+- Chapter one: How to set up a reproducible development environment using Docker for Python
+
+## [0.0.8] - 2020-03-18
 
 ### Added:
 

@@ -5,6 +5,3 @@ build:
 
 run:
 	docker run python-x-docker:c1 $(command)
-
-exec:
-	docker exec -it py-x-docker-c1 $(command)

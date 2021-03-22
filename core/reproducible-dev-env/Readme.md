@@ -1,4 +1,4 @@
-# How to set up a reproducible development environment using Docker container for Python
+# How to set up a reproducible development environment using Docker for Python
 
 In this chapter, we are going to set up a **reproducible development environment** for Python using Docker.
 
@@ -7,18 +7,22 @@ TODO: dockerfile -> image -> container
 We will go through the following steps:
 1. Prepare the code and dependency
 2. Create a *Dockerfile*
-3. Build the Docker container and execute it
+3. Build the Docker image and spin up the container
 
 ## Prepare the code and dependency
 Prepare your python code in [src](./src) and put your dependencies in [requirements.txt](./requirements.txt)  
-Here just as an example, I use the code of sudoku generator, which is [another repo](https://github.com/ZequnZ/CV-based-sudoku-solver) of mine.  
-You can see the folder structure as follows:
+Here just as an example, I use the code of sudoku generator, which is [another repo](https://github.com/ZequnZ/CV-based-sudoku-solver) of mine.
+You can run the main function to generate a sudoku with different random seed and level:
+```python
+python main.py -s <ramdom_seed> -l <level>
+```
+
+The folder structure is presented as follows:
 
 ```
 .
 ├── Dockerfile
 ├── Makefile
-├── Readme.md
 ├── requirements.txt (Dependencies)
 └── src (Python code folder)
     ├── main.py
@@ -72,7 +76,7 @@ ENTRYPOINT [ "python", "main.py" ]
 
 ```
 Finally, we need to define the executable command for the container.
-You may notice that in the [hello-world example](https://github.com/ZequnZ/python-x-docker-handbook#an-hello-world-example), we use `CMD` in the end, but here we use `ENTRYPOINT`.
+You may notice that in the [hello-world example](https://github.com/ZequnZ/python-x-docker-handbook#an-hello-world-example), we use `CMD` in the end, but here we use `ENTRYPOINT`.  
 The difference is that, `CMD` defines the defaults for the container that can be overwritten during the execution: `docker run py-x-docker <command>`.
 If you want your container to run the command every time, using `ENTRYPOINT`.
 
@@ -95,9 +99,34 @@ However, if you want to change the values of the arguments, you can easily overw
 docker run py-x-docker -s 50 -l 71
 ```
 
-## Build the Docker container and execute it
+## Build the Docker image and spin up the container
 
-In the [hello-world example](https://github.com/ZequnZ/python-x-docker-handbook#an-hello-world-example), we tried to use commands to build Dockerfile into a Docker container and execute it.
+Next, we will need to build the Docker image from Dockerfile, with the following command:
+```
+docker build -t python-x-docker:c1 .
+```
+Using `-t` this images is tagged with name `python-x-docker:c1`.  
+
+To spin up the container, we need to run 
+```
+docker run python-x-docker:c1 
+```
+As mentioned above, if we do not specify any arguments here, the defaults defined by `CMD` would be used.
+If you want to use different values, you can just specify them in the commands, for example:
+```
+docker run python-x-docker:c1 -s 50 -l 70
+```
+Again, I also add a [Makefile](./Makefile) to make life easier: 
+- Build the Docker container: `make build`  
+- Execute the container: `make run`  
+Using different arguments here is a bit different, you would need to run:
+```
+make run command='-s 50 -l 70'
+```
+
+Finally, after these steps, you will see a sudoku generated and pop up in your terminal.
+What is more interesting is that, the development environment you just created is identical to the one in my laptop.
+Now you can creat a Dockerfile by youself, supporting your own development.
 
 ref:  
 - https://towardsdatascience.com/hands-on-guide-to-docker-for-data-science-d5d1f6f4a326

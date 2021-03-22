@@ -9,7 +9,12 @@ and provide some prototypes that can be used for your development.
 
 Just need to install [Python](https://www.python.org/) and [Docker](https://www.docker.com/) and follow this book!
 
+## Content:
+[How to set up a reproducible development environment using Docker for Python](./core/reproducible-dev-env)
+
 ## An hello world example
+
+If you are new to Docker, you can follow this hello world example to have a first try.
 
 1. Clone this repository `git clone https://github.com/ZequnZ/python-x-docker-handbook.git` 
 2. Change your current directory to this repo `cd python-x-docker-handbook`
@@ -23,12 +28,10 @@ so that you do not need to remember the full command:
 - Build the Docker container: `make build`  
 - Execute the container: `make run`  
 
-**That is the way to put your Python code into a Docker container, and build it and execute it!**  
+**That is the way to put your Python code into a Docker container**  
 
 It is simple, isn't it? If you want to know more about how to utilize Docker to support your python development, just follow this repo and I will show more interesting use cases!
 
-## Content:
-[How to set up a reproducible development environment using Docker for Python](./core/reproducible-dev-env)
 
 
 ## TODO

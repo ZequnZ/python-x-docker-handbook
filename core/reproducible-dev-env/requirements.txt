@@ -1,6 +1,1 @@
-numpy
-pandas
-matplotlib
-seaborn
-jupyterlab
-scikit-learn
+numpy==1.20.1

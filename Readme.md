@@ -27,12 +27,13 @@ so that you do not need to remember the full command:
 
 It is simple, isn't it? If you want to know more about how to utilize Docker to support your python development, just follow this repo and I will show more interesting use cases!
 
+## Content:
+[How to set up a reproducible development environment using Docker for Python](./core/reproducible-dev-env)
+
+
 ## TODO
 
 Content：
-- how to set up a **reproducible development environment** using Docker container for Python
-   - build, run, execute
-   - pull/push
 - how to run your Python code interactively with a Docker container
    - volumn
    - --publish , -p  Publish a container's port(s) to the host
@@ -41,3 +42,6 @@ Content：
   - 1 + 2
 - The power of docker-compose
   - mocked service
+
+ref:
+https://docs.docker.com/language/python/

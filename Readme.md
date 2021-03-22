@@ -27,6 +27,10 @@ so that you do not need to remember the full command:
 
 It is simple, isn't it? If you want to know more about how to utilize Docker to support your python development, just follow this repo and I will show more interesting use cases!
 
+## Content:
+[How to set up a reproducible development environment using Docker for Python](./core/reproducible-dev-env)
+
+
 ## TODO
 
 Content：

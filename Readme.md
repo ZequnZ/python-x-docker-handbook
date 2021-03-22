@@ -10,8 +10,8 @@ and provide some prototypes that can be used for your development.
 Just need to install [Python](https://www.python.org/) and [Docker](https://www.docker.com/) and follow this book!
 
 ## Content:
-[How to set up a reproducible development environment using Docker for Python](./core/reproducible-dev-env)
-**Working on** How to develop your Python code interactively with Docker
+[How to set up a reproducible development environment using Docker for Python](./core/reproducible-dev-env)  
+**Working on** [How to develop your Python code interactively with Docker](./core/interactively-running)
 
 ## An hello world example
 

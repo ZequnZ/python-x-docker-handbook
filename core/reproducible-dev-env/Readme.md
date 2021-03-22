@@ -126,7 +126,4 @@ make run command='-s 50 -l 70'
 
 Finally, after these steps, you will see a sudoku generated and pop up in your terminal.
 What is more interesting is that, the development environment you just created is identical to the one in my laptop.
-Now you can creat a Dockerfile by youself, supporting your own development.
-
-ref:  
-- https://towardsdatascience.com/hands-on-guide-to-docker-for-data-science-d5d1f6f4a326
+Now you can creat a Dockerfile by youself, to support your own development!

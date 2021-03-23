@@ -119,6 +119,7 @@ docker run python-x-docker:c1 -s 50 -l 70
 Again, I add a [Makefile](./Makefile) to make life easier: 
 - Build the Docker container: `make build`  
 - Execute the container: `make run`
+
 Using different arguments here is a bit different, you would need to run:
 ```
 make run command='-s 50 -l 70'

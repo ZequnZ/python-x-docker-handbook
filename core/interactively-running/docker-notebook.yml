@@ -1,0 +1,13 @@
+version: "3.7"
+
+services:
+  nbk:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+
+    volumes:
+      - ./:/app
+
+    ports:
+      - "0.0.0.0:8999:8999"

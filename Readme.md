@@ -2,6 +2,8 @@
 
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)  [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
 
+![Banner](./asset/banner.png)
+
 In this repo, I will introduce how to use Docker to support Python project/application development
 and provide some prototypes that can be used for your development.
 
@@ -10,7 +12,8 @@ and provide some prototypes that can be used for your development.
 Just need to install [Python](https://www.python.org/) and [Docker](https://www.docker.com/) and follow this book!
 
 ## Content:
-[How to set up a reproducible development environment using Docker for Python](./core/reproducible-dev-env)
+[How to set up a reproducible development environment using Docker for Python](./core/reproducible-dev-env)  
+**Working on** [How to develop your Python code interactively with Docker](./core/interactively-running)
 
 ## An hello world example
 

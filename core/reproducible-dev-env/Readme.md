@@ -11,7 +11,7 @@ We will go through the following steps:
 
 ## Prepare the code and dependency
 Prepare your python code in [src](./src) and put your dependencies in [requirements.txt](./requirements.txt)  
-Here just as an example, I use the code of sudoku generator, which is [another repo](https://github.com/ZequnZ/CV-based-sudoku-solver) of mine.
+Here just as an example, I use the code of [sudoku generator]((https://github.com/ZequnZ/CV-based-sudoku-solver).  
 You can run the main function to generate a sudoku with different random seed and level:
 ```python
 python main.py -s <ramdom_seed> -l <level>
@@ -30,16 +30,16 @@ The folder structure is presented as follows:
 
 ```
 ## Create a *Dockerfile*
-After having the code, next we need to create a *Dockerfile* which contains instructions that can be used to build a Docker container.
+After having the code, next we need to create a *Dockerfile* which contains instructions that can be used to build a Docker container.  
 For this example, we only use several essential and useful instructions.   
 I will walk the [Dockerfile](./Dockerfile) line by line:  
 ```
 FROM python:3.8.1-slim
 ```
-A Dockerfile must begin with a `FROM` instruction, initializing a new build stage and specifying a **basic image**.
+A Dockerfile must begin with a `FROM` instruction, initializing a new build stage and specifying a **basic image**.  
 Here I choose the `python:3.8.1-slim` image.
-According to the image name, you may know that the Python version I pick is `3.8.1`.
-There are several variants of Python images. The postfix `-slim` here means that the image only contains **the minimal packages** needed to run Python. 
+From name, you may know that the Python version I pick is `3.8.1`.  
+There are several variants of Python images. The postfix `-slim` here means that the image only contains **the minimal packages** needed to run Python.   
 You can check [here](https://hub.docker.com/_/python) to see all the available options and based on your need, choose the Python base image for your use case. 
 
 ```
@@ -116,14 +116,21 @@ If you want to use different values, you can just specify them in the commands, 
 ```
 docker run python-x-docker:c1 -s 50 -l 70
 ```
-Again, I also add a [Makefile](./Makefile) to make life easier: 
+Again, I add a [Makefile](./Makefile) to make life easier: 
 - Build the Docker container: `make build`  
-- Execute the container: `make run`  
+- Execute the container: `make run`
+
 Using different arguments here is a bit different, you would need to run:
 ```
 make run command='-s 50 -l 70'
 ```
 
-Finally, after these steps, you will see a sudoku generated and pop up in your terminal.
-What is more interesting is that, the development environment you just created is identical to the one in my laptop.
+Finally, after these steps, you will see a sudoku generated and pop up in your terminal.  
+What is more interesting is that, the development environment you just created is identical to the one in my laptop.  
 Now you can creat a Dockerfile by youself, to support your own development!
+
+However, you may notice that we just copy everything inside container so that we are able to execute the code,
+which is good but not convenient during development - you do not want to run through all steps every time just change a few lines of code.  
+Check next chatper - [How to develop your Python code interactively with Docker](../interactively-running) to know how to interactively use Docker while developing your Python code.
+
+

@@ -5,7 +5,8 @@
 ![Banner](./asset/banner.png)
 
 In this repo, I will introduce how to use Docker to support Python project/application development
-and provide some prototypes that can be used for your development.
+and provide some prototypes that can be used for your development. 
+Feel free to fork this repo and create your own Docker container!
 
 ## How to use this book 
 

@@ -5,13 +5,13 @@ In this chapter, we are going to set up a **reproducible development environment
 TODO: dockerfile -> image -> container
 
 We will go through the following steps:
-1. Prepare the code and dependency
-2. Create a *Dockerfile*
+1. Prepare the code and dependencies
+2. Create a Dockerfile
 3. Build the Docker image and spin up the container
 
-## Prepare the code and dependency
+## Prepare the code and dependencies
 Prepare your python code in [src](./src) and put your dependencies in [requirements.txt](./requirements.txt)  
-Here just as an example, I use the code of [sudoku generator]((https://github.com/ZequnZ/CV-based-sudoku-solver).  
+Here just as an example, I use the code of [sudoku generator](https://github.com/ZequnZ/CV-based-sudoku-solver).  
 You can run the main function to generate a sudoku with different random seed and level:
 ```python
 python main.py -s <ramdom_seed> -l <level>
@@ -29,10 +29,10 @@ The folder structure is presented as follows:
     └── sudoku.py
 
 ```
-## Create a *Dockerfile*
-After having the code, next we need to create a *Dockerfile* which contains instructions that can be used to build a Docker container.  
+## Create a Dockerfile
+After having the code, next we need to create a Dockerfile which contains instructions that can be used to build a Docker container.  
 For this example, we only use several essential and useful instructions.   
-I will walk the [Dockerfile](./Dockerfile) line by line:  
+I will walk through the [Dockerfile](./Dockerfile) line by line:  
 ```
 FROM python:3.8.1-slim
 ```

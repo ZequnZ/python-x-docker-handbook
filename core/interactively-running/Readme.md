@@ -50,7 +50,7 @@ ENTRYPOINT [ "jupyter-lab", "--ip=0.0.0.0", "--port=8999", "--no-browser", "--al
 ```
 We can see that we do not copy the `src` folder into the container.
 Keep this in mind and we will see where the magic happens later.  
-As the goal is to spin up JupyterLab, the command under `ENTRYPOINT` is changed accordingly, using the `port` 8899 of the container.
+As the goal is to spin up JupyterLab, the command under `ENTRYPOINT` is changed accordingly, using the `port` 8999 of the container.
 
 ## Build the Docker image and start the container with a bind mount
 
@@ -59,12 +59,40 @@ First, we will need to build the Docker image from Dockerfile, with the followin
 docker build -t python-x-docker:c2 .
 ```
 
-Starting container is slightly different this time,
+Starting container is slightly different this time. 
 ```
-docker run -it -p 8999:8999 -v $$(pwd)/:/app python-x-docker:c2 --name python-x-docker-c2
+docker run --name python-x-docker-c2 -p 8998:8999 -v $(pwd)/:/app python-x-docker:c2 
+```
+We spin up the JupyterLab in the container and need to access it outside the container.
+Therefore, we need to make the port 8999 of the container accessible to us as the host.
+
+With the help of `-p 8998:8999`, we link the port 8998 of the host machine to the port 8999 of the container.
+Accessing `http://0.0.0.0:8998/` is equivalent to accessing the `http://0.0.0.0:8999/` of the container.
+
+Then we also need to set directories which can be shared with the container.
+In other words, container will have the read and write permission to directories which are specified after `-v`.
+Using `-v $(pwd)/:/app` we share all files under the current path with the container.
+
+You can see a link in your terminal to open the jupyter lab.
+For better explaining, in this example you will need to manually modify the port in the link from 8999 to 8998 in order to open it.
+A better practice is using the same port nubmer like `-p 8999:8999` to make it more convenient.
+
+To check if it works as expected, we can enter into the container to see its filesystem:
+```
+docker exec -it python-x-docker-c2 bash
 ```
 
+Then, we can see:
+![container](../../asset/into_container.png)
+Even though we do not copy everything(only the requirements.txt) in the Dockerfile,
+we can still see files inside the container and run the `helloworld.py`!
 
+### Create a jupyter notebook and save it
+
+Now, you have a playaround supported by Docker and just create and save your jupyter notebook!
+
+
+## One more thing...
 
 
 

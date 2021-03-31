@@ -66,7 +66,7 @@ docker run --name python-x-docker-c2 -p 8998:8999 -v $(pwd)/:/app python-x-docke
 We spin up the JupyterLab in the container and need to access it outside the container.
 Therefore, we need to make the port 8999 of the container accessible to us as the host.
 
-With the help of `-p 8998:8999`, we link the port 8998 of the host machine to the port 8999 of the container.
+With the help of `-p 0.0.0.0:8998:8999`, we link the port 8998 of the host machine to the port 8999 of the container.
 Accessing `http://0.0.0.0:8998/` is equivalent to accessing the `http://0.0.0.0:8999/` of the container.
 
 Then we also need to set directories which can be shared with the container.
@@ -75,7 +75,7 @@ Using `-v $(pwd)/:/app` we share all files under the current path with the conta
 
 You can see a link in your terminal to open the jupyter lab.
 For better explaining, in this example you will need to manually modify the port in the link from 8999 to 8998 in order to open it.
-A better practice is using the same port nubmer like `-p 8999:8999` to make it more convenient.
+A better practice is using the same port nubmer like `-p 0.0.0.0:8999:8999` to make it more convenient.
 
 To check if it works as expected, we can enter into the container to see its filesystem:
 ```
@@ -91,37 +91,32 @@ we can still see files inside the container and run the `helloworld.py`!
 
 Now, you have a playaround supported by Docker and just create and save your jupyter notebook!
 
-
 ## One more thing...
 
+I would like to introduce [Docker Compose](https://docs.docker.com/compose/) which a tool for 
+defining and running multi-container Docker applications.
+Here we will use it to spin up the container and we will see its power in the next chapter.
 
+In order to use Docker Compose, we need to create a `yml` file listing the setup: 
+```yml
+version: "3.7"
 
+services:
+  notebook:
+    build:
+      context: ./
+      dockerfile: Dockerfile
 
+    volumes:
+      - ./:/app
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    ports:
+      - "0.0.0.0:8998:8999"
+```
+In the `yml` file, we define a service called `notebook`, with the following setups: 
+- A Dockerfile used to build the image need to be specified under `build` instruction. 
+- The shared directories are defined under `volumns` instruction.
+- The ports of the host and the container are linked dunder `ports` instruction.
 
 
 

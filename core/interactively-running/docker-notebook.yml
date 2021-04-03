@@ -1,7 +1,7 @@
 version: "3.7"
 
 services:
-  nbk:
+  notebook:
     build:
       context: ./
       dockerfile: Dockerfile
@@ -10,4 +10,4 @@ services:
       - ./:/app
 
     ports:
-      - "0.0.0.0:8999:8999"
+      - "0.0.0.0:8998:8999"

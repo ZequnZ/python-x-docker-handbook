@@ -7,7 +7,8 @@ rm:
 	docker rm $$(docker ps -aq -f "name=python-x-docker-c2")
 
 run:
-	docker run -it -p 8999:8999 -v $$(pwd)/:/app python-x-docker:c2 --name python-x-docker-c2
+	make -k rm
+	docker run --name python-x-docker-c2 -p 0.0.0.0:8998:8999 -v $$(pwd)/:/app python-x-docker:c2 
 
 exec:
 	docker exec -it python-x-docker-c2 bash

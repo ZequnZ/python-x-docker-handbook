@@ -130,7 +130,7 @@ What is more interesting is that, the development environment you just created i
 Now you can creat a Dockerfile by youself, to support your own development!
 
 However, you may notice that we just copy everything inside container so that we are able to execute the code,
-which is good but not convenient during development - you do not want to run through all steps every time just change a few lines of code.  
+which is good but not convenient during development - you do not want to run through all steps every time just after changing a few lines of code.  
 Check next chatper - [How to develop your Python code interactively with Docker](../interactively-running) to know how to interactively use Docker while developing your Python code.
 
 

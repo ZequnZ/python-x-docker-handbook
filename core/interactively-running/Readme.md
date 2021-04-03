@@ -114,14 +114,25 @@ services:
       - "0.0.0.0:8998:8999"
 ```
 In the `yml` file, we define a service called `notebook`, with the following setups: 
-- A Dockerfile used to build the image need to be specified under `build` instruction. 
-- The shared directories are defined under `volumns` instruction.
-- The ports of the host and the container are linked dunder `ports` instruction.
+    - A Dockerfile used to build the image need to be specified under `build` instruction. 
+    - The shared directories are defined under `volumns` instruction.
+    - The ports of the host and the container are linked dunder `ports` instruction.
 
+We can use the following command to spin up the notebook inside the container:
+```
+docker-compose  -f ./docker-notebook.yml up --build
+``` 
+A Docker image will be built based on the Dockerfile and then the container will be started.
 
+You can apply the option `--no-build` once you have built the image, to save some time:
+```
+docker-compose  -f ./docker-notebook.yml up --no-build
+``` 
 
+Again, I add a [Makefile](./Makefile) to make life easier.
+Check out the file to know how to utilize it.
 
-
-
-
-
+In this chapter, we learn how to use Docker for interactly developing by using bind mounts and publishing a container's port to the host.
+Other than jupyter-lab, you can run a web server in the container and make it accessible to the host.  
+Also, we introduce Docker Compose to spin up the container.
+However, Docker Compose is far more than this, next chapter - [The power of Docker Compose](../powerful-docker-compose), we will see how to utilize Docker to achieve something more inretesting. 

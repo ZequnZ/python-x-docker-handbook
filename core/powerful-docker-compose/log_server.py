@@ -41,7 +41,7 @@ def spin_up_log_server(udp_ip, udp_port, save=False):
         # buffer size is 1024 bytes
         data = sock.recvfrom(1024)[0]
         print(data.decode("utf-8"))
-        # write logs to file to test
+        # write logs to file
         if save:
             with open("logfile.txt", "a") as log_file:
                 log_file.write(data.decode("utf-8") + "\n")

@@ -1,7 +1,6 @@
 import logging
 import logging.handlers
 import socket
-import sys
 
 
 class LogUDPHandler(logging.handlers.SysLogHandler):
@@ -37,19 +36,15 @@ logging.raiseExceptions = True
 logger = logging.getLogger("logger")
 logger.setLevel(logging.DEBUG)
 
-formatter = logging.Formatter("%(asctime)s %(name)-12s %(levelname)-8s %(message)s")
-
-stdoutHandler = logging.StreamHandler(sys.stdout)
-stdoutHandler.setFormatter(formatter)
-stdoutHandler.setLevel(logging.DEBUG)
-logger.addHandler(stdoutHandler)
-
 host, port = "log_server", 5237
 logHandler = LogUDPHandler(address=(host, port))
+# Set log format
+formatter = logging.Formatter("%(asctime)s %(name)-12s %(levelname)-8s %(message)s")
 logHandler.setFormatter(formatter)
 logHandler.setLevel(logging.DEBUG)
 logger.addHandler(logHandler)
 
+# logs with different levels
 logger.debug("debug msg")
 logger.info("info msg")
 logger.warning("warning msg")

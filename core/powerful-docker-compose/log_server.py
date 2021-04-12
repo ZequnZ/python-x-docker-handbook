@@ -36,7 +36,6 @@ def spin_up_log_server(udp_ip, udp_port, save=False):
 
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)  # Internet  # UDP
     sock.bind((udp_ip, udp_port))
-    print("spin up")
     while True:
         # buffer size is 1024 bytes
         data = sock.recvfrom(1024)[0]

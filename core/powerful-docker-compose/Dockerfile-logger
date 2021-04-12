@@ -1,0 +1,10 @@
+FROM python:3.8.1-slim
+
+LABEL Author="ZequnZ" Link="https://github.com/ZequnZ/python-x-docker-handbook"
+
+WORKDIR  /app
+
+COPY log_server.py /app
+
+CMD ["--port", "5237", "--save"]
+ENTRYPOINT ["python", "-u", "log_server.py"]

@@ -1,20 +1,10 @@
 SHELL=/bin/bash
 
 build:
-	docker build -t python-x-docker:c3 .
+	docker-compose  -f ./docker-compose.yml up --build
 
-rm:
-	docker rm $$(docker ps -aq -f "name=python-x-docker-c2")
-
-run:
-	make -k rm
-	docker run --name python-x-docker-c3 python-x-docker:c3 
-
+up:
+	docker-compose  -f ./docker-compose.yml up --no-build
+	
 exec:
-	docker exec -it python-x-docker-c3 bash
-
-compose-build:
-	docker-compose  -f ./docker-log.yml up --build
-
-compose-up:
-	docker-compose  -f ./docker-log.yml up --no-build
+	docker exec -it powerful-docker-compose_log_server_1 bash

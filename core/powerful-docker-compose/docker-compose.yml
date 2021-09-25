@@ -1,13 +1,10 @@
 version: "3.7"
 
 services:
-  notebook:
+  app:
     build:
       context: ./
       dockerfile: Dockerfile
-
-    networks:
-      - python-x-docker
 
     depends_on:
       - log_server
@@ -15,13 +12,7 @@ services:
   log_server:
     build:
       context: ./
-      dockerfile: Dockerfile-logger
-
-    networks:
-      - python-x-docker
+      dockerfile: Dockerfile-log-server
 
     expose:
       - "5237/udp"
-
-networks:
-  python-x-docker:

@@ -1,0 +1,20 @@
+services:
+
+  postgres:
+    restart: always
+    image: postgres:12.14
+    environment:
+      - POSTGRES_PASSWORD=pwd
+    ports:
+      - "0.0.0.0:5432:5432"
+    command: ["-c", "fsync=false"]
+
+  flyway:
+    image: boxfuse/flyway:5.2.4
+    environment:
+      - FLYWAY_CONNECT_RETRIES=60
+    volumes:
+      - ./src/db_migration:/flyway/sql/
+    depends_on:
+      - postgres
+    command: migrate -url=jdbc:postgresql://postgres:5432/postgres -user=postgres -password=pwd  -connectRetries=60

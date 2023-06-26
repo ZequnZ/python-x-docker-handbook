@@ -1,0 +1,16 @@
+version: "3.7"
+
+services:
+  model-training:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+
+    volumes:
+      - ./src/:/app
+
+    environment:
+      SESSION_DATA_PATH: data/sessions.csv
+      VENUE_DATA_PATH: data/venues.csv
+
+    entrypoint: ["python", "-m", "model"]

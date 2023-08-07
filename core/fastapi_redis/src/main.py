@@ -68,7 +68,11 @@ def get_data_from_redis(venue_ids: list) -> pd.DataFrame:
     Returns:
         pd.DataFrame: venue data
     """
-    data_lists = [pickle.loads(r.get(str(k))) for k in venue_ids]
+    pipe = r.pipeline()
+    for venue_id in venue_ids:
+        pipe.get(str(venue_id))
+
+    data_lists = [pickle.loads(data) for data in pipe.execute()]
     df = pd.DataFrame(data_lists, columns=venue_data_columns)
     df["venue_id"] = venue_ids
     return df

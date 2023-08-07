@@ -62,8 +62,8 @@ def venue_data_preprocessing(venue_df: pd.DataFrame) -> pd.DataFrame:
     venue_df.fillna(value=imputed_dict, inplace=True)
 
     # Scale venue features into range [0,1]
-    venue_df["rating"] = venue_df["rating"] / 10
-    venue_df["price_range"] = venue_df["price_range"] / 4
-    venue_df["popularity"] = venue_df["popularity"] / 100
+    venue_df["rating"] /= venue_df["rating"].max()
+    venue_df["price_range"] /= venue_df["price_range"].max()
+    venue_df["popularity"] /= venue_df["popularity"].max()
 
     return venue_df

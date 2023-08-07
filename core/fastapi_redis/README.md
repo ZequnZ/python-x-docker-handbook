@@ -125,6 +125,9 @@ You will receive:
 }
 ```
 
+For example:
+![Banner](./asset/example.png)
+
 You can also check generated API documentation here: [http://0.0.0.0:8002/docs](http://0.0.0.0:8002/docs)
 
 ## Folder structure

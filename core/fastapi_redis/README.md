@@ -1,6 +1,6 @@
 # Real-time webserver + Redis for venues ranking
 
-In this chapter, to improve my MLOPs understanding and improve my skill , I build a **real-time web server** for venues ranking.
+In this chapter, to improve my MLOPs understanding and improve my skill, I build a **real-time web server** for venues ranking.
 Plus I use a **cache** to speed up the data extraction, which is used very often in real work.  
 On top of that, I also train a simple ranking model to get the model. And a model training pipeline is included as well.  
 

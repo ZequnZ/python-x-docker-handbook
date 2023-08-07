@@ -4,7 +4,6 @@ version = "0.1.0"
 description = "project description"
 authors = ["ZequnZ <zequn.zhou007@gmail.com>"]
 readme = "README.md"
-packages = [{include = "fastapi_redis"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"

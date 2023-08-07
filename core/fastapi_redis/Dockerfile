@@ -31,17 +31,17 @@ RUN poetry config virtualenvs.in-project true && \
 
 FROM base as final
 
-ENV VIRTUAL_ENV=/app/.venv \
-    PATH="/app/.venv/bin:${PATH}" \
+ENV VIRTUAL_ENV=/.venv \
+    PATH="/.venv/bin:${PATH}" \
     PYTHONPATH="/app/src/"
 
 # Copy your code into container
 # COPY /src /app
 
 # Copy installed Python dependencies to final container
-COPY --from=builder /app/.venv ./.venv
+COPY --from=builder /app/.venv ${VIRTUAL_ENV}
 
-ENTRYPOINT ["python", "-m", "src.main"]
+ENTRYPOINT ["python", "-m", "main"]
 
 # Keep the container running
 # CMD tail -f /dev/null

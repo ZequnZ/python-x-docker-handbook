@@ -1,18 +1,23 @@
-install-packages:
-	pip install -r requirements/dev.txt
-	pip install -r requirements/app.txt
+install-dependency:
+	poetry install
+
+activate-virtualenv:
+	poetry shell
 
 linter:
-	black ./src --check
-	ruff check ./src
+	poetry run black ./src --check
+	poetry run ruff check ./src
 
 formatter:
-	black ./src -v
-	ruff check ./src --fix
-	isort ./src -v
+	poetry run black ./src -v
+	poetry run ruff check ./src --fix
+	poetry run isort ./src -v
 
 checker:
-	mypy ./src --check-untyped-defs
+	poetry run mypy ./src --check-untyped-defs
+
+rebuild-app:
+	docker-compose  -f ./docker-compose-server.yaml up --build
 
 run-app:
 	docker-compose  -f ./docker-compose-server.yaml up

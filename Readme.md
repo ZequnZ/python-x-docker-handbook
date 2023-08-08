@@ -13,8 +13,8 @@ Feel free to fork this repo and create your own Docker container!
 Just need to install [Python](https://www.python.org/) and [Docker](https://www.docker.com/) and follow this book!
 
 ## Content:
-[How to set up a reproducible development environment using Docker for Python](./core/reproducible-dev-env)  
-[How to develop your Python code interactively with Docker](./core/interactively-running)  
+- [How to set up a reproducible development environment using Docker for Python](./core/reproducible-dev-env)    
+- [How to develop your Python code interactively with Docker](./core/interactively-running)    
 
 
 ## An hello world example

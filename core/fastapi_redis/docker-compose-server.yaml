@@ -1,0 +1,31 @@
+version: "3.7"
+
+services:
+  server:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    
+    # For local testing
+    volumes:
+      - ./src/:/app/
+    ports:
+      - "8002:8002"
+    depends_on:
+      - redis
+    environment:
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      REDIS_PASSWORD: password
+      MODEL_DIRECTORY: model_1.0_050623_102618
+    links:
+      - redis 
+
+  redis:
+    image: redis:latest
+    # For local testing
+    ports:
+      - "6379:6379"
+    expose:
+      - "6379"
+    command: redis-server --loglevel warning --requirepass password

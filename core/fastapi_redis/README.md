@@ -1,15 +1,18 @@
 # Real-time webserver + Redis for venues ranking
 
-In this chapter, to improve my MLOPs understanding and improve my skill, I build a **real-time web server** for venues ranking.
+In this chapter, to improve my MLOPs understanding and improve my skill, I build a **real-time webserver** for venues ranking.
+
 Plus I use a **cache** to speed up the data extraction, which is used very often in real work.  
 On top of that, I also train a simple ranking model to get the model. And a model training pipeline is included as well.  
+
+I choose *FastAPI* as the web framework because it supports concurrency and asynchronous and has built-in validation support with [Pydantic](https://docs.pydantic.dev/latest/). Addtionally, an API documentation is generated automatically.
+
+As for cache, I select *Redis* which is an in-memory data store and support many data types. We can use Redis pipelining to reduce the number of response when retrieving much data at once.
 
 It is great to run this project into two containers using `Docker-compose`, and we can learn a lot about how to define and manage the connect and interaction between them.  
 
 You can see the overall architecture here:
 ![architecture](./asset/architecture.png)
-
-
 
 
 ## TODO
